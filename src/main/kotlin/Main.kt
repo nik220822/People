@@ -5,6 +5,10 @@ fun main() {
 //    val lastIndex= likesArray!!.lastIndex
     val lastIndex = likes!!.lastIndex
 //    val text = if (likesArray[lastIndex] == '1') "человеку" else "людям"
-    val text = if (likes[lastIndex] == '1') "человеку" else "людям"
+    val text = if (lastIndex == 0) {
+        if (likes[lastIndex] == '1') "человеку" else "людям"
+    } else {
+        if (likes[lastIndex] == '1' && likes[lastIndex - 1] != '1') "человеку" else "людям"
+    }
     println(text)
 }
